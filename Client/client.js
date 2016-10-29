@@ -1,22 +1,32 @@
-// Import node socket module
-var socket = require('net').Socket();
+// Import node socket module and socket connection variables
+const socket = require('net').Socket();
+const socketVariables = require('./socketVariables.js');
 
-// Set up socket connection variables
-var socketVariables = {
-    serverPort: 8000,
-    serverIPAddress: '10.62.0.117'
-};
-    
+   
 // Set up socket connection to the server
 socket.connect(socketVariables.serverPort, socketVariables.serverIPAddress);
 
-// Send message to the echo server through the socket connection
-socket.write('GET http://' + socketVariables.serverIPAddress + '/echo.php?message=hello HTTP/1.1\n\n');
 
-// Create handler for the response from the server
-socket.on('data', function(d) {
-    console.log(d.toString());
+/**
+ * Create handlers for the response from the server
+ */
+
+// Print the response from the server to the console and close the socket
+socket.on('data', (data) => {
+    console.log(data.toString());
+    socket.end();
+});
+
+// Handle error in connecting to the server
+socket.on('error', (err) => {
+    console.log('Error connecting to server');
 });
 
 // Close the socket connection
-socket.end();
+socket.on('end', () => {
+    console.log('Disconnected');
+});
+
+
+// Send message to the echo server through the socket connection
+socket.write('GET http://' + socketVariables.serverIPAddress + '/echo.php?message=hello HTTP/1.1\n\n');
