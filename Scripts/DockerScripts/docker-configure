@@ -21,10 +21,10 @@ sudo sh -c "echo \"export HTTP_PROXY=http://www-proxy.scss.tcd.ie:8080\" >> /hom
 sudo sh -c "echo \"echo 'bootsync.sh: sleeping a little bit so route config works...'\" >> /var/lib/boot2docker/bootlocal.sh"
 sudo sh -c "echo \"sleep 15\" >> /var/lib/boot2docker/bootlocal.sh"
 sudo sh -c "echo \"echo '...continuing'\" >> /var/lib/boot2docker/bootlocal.sh"
-sudo sh -c "echo \"sudo route add -net 10.63.0.0 netmask 255.255.0.0 eth0\" >> /var/lib/boot2docker/bootlocal.sh"
+sudo sh -c "echo \"sudo route add -net 10.62.0.0 netmask 255.255.0.0 eth0\" >> /var/lib/boot2docker/bootlocal.sh"
 sudo sh -c "echo \"sudo route del default eth0\" >> /var/lib/boot2docker/bootlocal.sh"
 sudo sh -c "echo \"sudo route add default gw 10.63.255.254 eth0\" >> /var/lib/boot2docker/bootlocal.sh"
-sudo sh -c "echo \"sudo route del -net 10.63.0.0 netmask 255.255.255.0 eth0\" >> /var/lib/boot2docker/bootlocal.sh"
+sudo sh -c "echo \"sudo route del -net 10.62.0.0 netmask 255.255.255.0 eth0\" >> /var/lib/boot2docker/bootlocal.sh"
 
 # the next command disables the username/password combination for the docker account. 
 # If you enable this, then you will only be able to access the machine using the command
