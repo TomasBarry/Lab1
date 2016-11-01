@@ -20,10 +20,13 @@ socket.on('data', (data) => {
 // Handle error in connecting to the server
 socket.on('error', (err) => {
     console.log('Error connecting to server');
+    socket.end();
 });
 
 // Close the socket connection
 socket.on('end', () => {
+    console.log('Bytes written on the socket: ' + socket.bytesWritten);
+    console.log('Bytes read on the socket: ' + socket.bytesRead);
     console.log('Disconnected');
 });
 
