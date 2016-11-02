@@ -16,3 +16,8 @@ To install Node:
   1. Run [Client/startClient.sh](./Client/StartClient.sh)
   2. If you want to change the server, port or message, edit [Client/socketVariables.js](./Client/SocketVaribles.js).
 
+## In action:
+  1. Server starting and accepting a message:
+![](Gifs/startingServer.gif)
+  2. Client starting and sending a mesage:
+1[](Gifs/startingClient.gif)
