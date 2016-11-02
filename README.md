@@ -18,6 +18,6 @@ To install Node:
 
 ## In action:
   1. Server starting and accepting a message:
-![](Gifs/startingServer.gif)
+![](https://github.com/TomasBarry/Lab1/blob/master/Gifs/StartingServer.gif)
   2. Client starting and sending a mesage:
-1[](Gifs/startingClient.gif)
+![](https://github.com/TomasBarry/Lab1/blob/master/Gifs/StartingServer.gif)
